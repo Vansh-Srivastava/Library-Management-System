@@ -1,0 +1,85 @@
+/*
+ * MembershipForm.module.css
+ *
+ * Recreates the desktop left panel ("Library Membership Information"):
+ *   - LabelFrame with a RIDGE border and a title tab
+ *   - Two internal columns of label + entry pairs (desktop grid cols 0/1 and 2/3)
+ *   - Bold arial-style labels, boxed entries, matching spacing
+ */
+
+.panel {
+  border: 8px ridge #b8b8b8;
+  padding: 10px 14px 14px;
+  position: relative;
+  background: #f0f0f0;                 /* default Tk frame gray */
+  margin-top: 10px;
+}
+
+/* The LabelFrame title that sits on the top border. */
+.legend {
+  position: absolute;
+  top: -12px;
+  left: 16px;
+  background: #f0f0f0;
+  padding: 0 6px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 15px;
+  color: #000;
+}
+
+/* Two side-by-side columns, like the desktop's grid columns 0/1 and 2/3. */
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 28px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  align-items: center;
+  gap: 8px;
+}
+
+.label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  color: #000;
+  white-space: nowrap;
+}
+
+.input,
+.select {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 2px inset #d4d4d4;          /* Tk Entry sunken look */
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.input:focus,
+.select:focus {
+  outline: 1px solid #4a90d9;
+}
+
+/* Stack the two columns on narrow screens without redesigning the form. */
+@media (max-width: 820px) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

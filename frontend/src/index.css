@@ -1,0 +1,19 @@
+/* Global reset. Deliberately minimal so component CSS Modules control the look
+   and the desktop appearance is preserved. */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #b0e0e6; /* powder blue, matching the desktop window */
+}

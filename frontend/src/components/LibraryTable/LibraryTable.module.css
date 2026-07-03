@@ -1,0 +1,70 @@
+/*
+ * LibraryTable.module.css
+ *
+ * Recreates the desktop bottom table (ttk.Treeview, headings-only):
+ *   - RIDGE-bordered powder-blue frame
+ *   - 18 columns with the exact desktop heading labels
+ *   - Horizontally + vertically scrollable
+ *   - Clicking a row fills the form (desktop get_cursor); selected row is blue
+ */
+
+.frame {
+  border: 8px ridge #9ac0c6;
+  background: #b0e0e6;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.scroll {
+  border: 2px inset #d4d4d4;
+  background: #fff;
+  overflow: auto;            /* both axes, like Treeview's x/y scrollbars */
+  max-height: 220px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: max-content;        /* let 18 columns extend and scroll horizontally */
+  min-width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.thead th {
+  position: sticky;
+  top: 0;
+  background: #eaeaea;
+  border: 1px solid #c8c8c8;
+  padding: 5px 8px;
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.row {
+  cursor: pointer;
+}
+
+.row td {
+  border: 1px solid #e2e2e2;
+  padding: 4px 8px;
+  white-space: nowrap;
+  color: #a52a2a;            /* Treeview rows rendered in brownish-red text */
+}
+
+.row:hover td {
+  background: #eef5ff;
+}
+
+.rowSelected td {
+  background: #0a63c9;
+  color: #fff;
+}
+
+.empty {
+  padding: 10px;
+  color: #666;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}

@@ -1,0 +1,33 @@
+/*
+ * LibraryPage.module.css
+ *
+ * Outer page layout matching the desktop window: powder-blue background,
+ * the title banner on top, a main row (form left, book panel right), the
+ * button bar, then the records table -- in the same vertical order as the
+ * Tkinter app.
+ */
+
+.page {
+  background: #b0e0e6;                 /* powder blue window background */
+  min-height: 100vh;
+  padding: 0 0 16px;
+  box-sizing: border-box;
+}
+
+.content {
+  padding: 0 12px;
+}
+
+/* Main row: membership form (wider) on the left, book panel on the right. */
+.mainRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+@media (max-width: 1000px) {
+  .mainRow {
+    grid-template-columns: 1fr;
+  }
+}
